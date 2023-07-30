@@ -1,0 +1,18 @@
+baseURL: http://example.org/
+languageCode: en-us
+title: Gmail Fan Out - forward emails with ease
+
+buildDrafts: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+theme: ace
+
+params:
+  # orderSectionsby: title
+  disableSearch: true
+  toc: true
+  disableReadmoreNav: true
