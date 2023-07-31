@@ -9,7 +9,7 @@ weight: 3
 
 Find the flow diagram below:
 
-![process](/img/gmail-fan-out-process.svg)
+![process](../img/gmail-fan-out-process.svg)
 
 Every hour the cron job triggers the `forwardEmails` function which checks for new emails.
 If new emails from `PRODUCER_EMAIL` are available they are forwarded to all subscribers and maked as "consumed" by an label.
@@ -18,10 +18,10 @@ If new emails from `PRODUCER_EMAIL` are available they are forwarded to all subs
 
 The subscribe flow diagram is presented below:
 
-![subscribe](/img/gmail-fan-out-subscribe.svg)
+![subscribe](../img/gmail-fan-out-subscribe.svg)
 
 ## Unsubscribe
 
 The unsubscribe flow diagram is presented below:
 
-![unsubscribe](/img/gmail-fan-out-unsubscribe.svg)
+![unsubscribe](../img/gmail-fan-out-unsubscribe.svg)

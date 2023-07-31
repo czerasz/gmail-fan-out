@@ -8,7 +8,7 @@ weight: 1
 
 A simple overview what can be achieved with this project is presented below:
 
-![overview](/img/gmail-fan-out-overview.svg)
+![overview](../img/gmail-fan-out-overview.svg)
 
 The idea is simple:
 
