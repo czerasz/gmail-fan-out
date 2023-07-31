@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -eu -o pipefail
+
+script_directory="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+project_directory="${script_directory}/.."
+
+binary='hugo'
+version="${VERSION:-0.115.4}"
+base_url="https://github.com/gohugoio/hugo/releases/download/v${version}"
+checksum_file="hugo_${version}_checksums.txt"
+archive_file="hugo_${version}_linux-amd64.tar.gz"
+archive_file="hugo_extended_${version}_linux-amd64.tar.gz"
+
+mkdir -p "${project_directory}/bin/"
+
+curl -sSLO "${base_url}/${checksum_file}"
+curl -sSLO "${base_url}/${archive_file}"
+
+grep "${archive_file}" "${checksum_file}" | sha256sum -c
+
+tar -xf "${archive_file}" "${binary}"
+
+mv "${binary}" "${project_directory}/bin/"
+
+rm -rf "${checksum_file}" \
+  "${archive_file}"
