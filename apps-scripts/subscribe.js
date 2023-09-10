@@ -97,7 +97,7 @@ function subscriberRow(email) {
 
 function subscriberMatch(email, matchFn) {
   // get last row filled with content
-  const lastRow = ss.getLastRow()
+  const lastRow = subscriberSheet.getLastRow()
 
   // get column with emails
   // format: sheetName!C1:D5
