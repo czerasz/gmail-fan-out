@@ -161,5 +161,5 @@ function parseFrom(text) {
     return email
   }
 
-  return ''
+  return text
 }
