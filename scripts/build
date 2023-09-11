@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -eu -o pipefail
+
+script_directory="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+project_directory="${script_directory}/.."
+
+build_dir="${project_directory}/dist"
+mkdir -p "${build_dir}"
+
+cat "${project_directory}/apps-scripts/"*.js > "${build_dir}/index.gs"
